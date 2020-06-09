@@ -5,16 +5,16 @@ class Indeed(scrapy.Spider):
     name = "indeed"
     start_urls = [
         # indeed US
-        # 'https://www.indeed.com/jobs?q=machine+learning&jt=fulltime&explvl=entry_level&l=CA',
-        # 'https://www.indeed.com/jobs?q=software+engineer&jt=fulltime&explvl=entry_level&l=CA',
-        # 'https://www.indeed.com/jobs?q=machine+learning&jt=fulltime&explvl=entry_level&l=MA',
-        # 'https://www.indeed.com/jobs?q=software+engineer&jt=fulltime&explvl=entry_level&l=MA',
-        # # # indeed FR
-        # 'https://www.indeed.fr/emplois?q=software+engineer&jt=fulltime&explvl=entry_level',
-        'https://www.indeed.fr/emplois?q=machine+learning&jt=fulltime&explvl=entry_level'
-        # # indeed CH
-        # 'https://www.indeed.ch/Stellen?q=software+engineer&l=GE&jt=fulltime&explvl=entry_level',
-        # 'https://www.indeed.ch/Stellen?q=machine+learning&l=GE&jt=fulltime&explvl=entry_level'
+        'https://www.indeed.com/jobs?q=machine+learning&jt=fulltime&explvl=entry_level&l=CA',
+        'https://www.indeed.com/jobs?q=software+engineer&jt=fulltime&explvl=entry_level&l=CA',
+        'https://www.indeed.com/jobs?q=machine+learning&jt=fulltime&explvl=entry_level&l=MA',
+        'https://www.indeed.com/jobs?q=software+engineer&jt=fulltime&explvl=entry_level&l=MA',
+        # indeed FR
+        'https://www.indeed.fr/emplois?q=software+engineer&jt=fulltime&explvl=entry_level',
+        'https://www.indeed.fr/emplois?q=machine+learning&jt=fulltime&explvl=entry_level',
+        # indeed CH
+        'https://www.indeed.ch/Stellen?q=software+engineer&l=GE&jt=fulltime&explvl=entry_level',
+        'https://www.indeed.ch/Stellen?q=machine+learning&l=GE&jt=fulltime&explvl=entry_level'
     ]
 
     def parse(self, response):
