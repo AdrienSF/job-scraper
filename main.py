@@ -22,7 +22,7 @@ level_filter = job_filter.Level()
 filter_list = [blacklist_filter, level_filter, whitelist_filter, strict_whitelist_filter]
 
 # load jobs
-with open('all_jobs.jl') as f:
+with open('indeed_jobs.jl') as f:
     jobs = [ json.loads(line) for line in f ]
 print(str(len(jobs)) + ' total')
 

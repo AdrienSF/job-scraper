@@ -40,8 +40,8 @@ class StrictWhitelist(Filter):
 
         def passes_filter(self, job: dict):
             # check if all whitelisted titles are in the job title, all whitelisted locations are in job['location']...
-            return all([ all([ good_word.lower() in job[prop].lower() for good_word in self.whitelist[prop] ]) for prop in self.whitelist ])
-
+            checked = [ all([ good_word.lower() in job[prop].lower() for good_word in self.whitelist[prop] ]) for prop in self.whitelist ]
+            return all([ item for item in checked if item != None ])
 
 class Level(Filter):
     def passes_filter(self, job: dict):
@@ -53,12 +53,13 @@ class Level(Filter):
             return False
 
         # if any of the following in the title, then not entry level 
-        title_blacklist = ['postdoc', 'professor', 'lecturer', 'senior', 'postgraduate', 'manager', 'mid-level', 'mid level']
+        title_blacklist = ['director', 'executive', 'postdoc', 'professor', 'lecturer', 'senior', 'postgraduate', 'manager', 'mid-level', 'mid level']
         if any([ word in job['title'].lower() for word in title_blacklist ]):
             return False
 
         # if any of the following in the description, then not entry level 
-        description_blacklist = ['senior', 'mid-level', 'mid level', 'at least 3 year', "mid-career", "late-career", "mid career", "late career"]
+        description_blacklist = ['strong working experience', 'senior', 'sr. ', 'mid-level', 'mid ', "mid-career", "late-career", "mid career", "late career"]
+        description_blacklist += [ str(num)+'+' for num in range(3, 20) ] + [ str(num)+' year' for num in range(3, 20) ] + [ str(num)+' ans' for num in range(2, 20) ]
         if any([ word in job['description'].lower() for word in description_blacklist ]):
             return False
 
