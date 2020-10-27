@@ -5,9 +5,6 @@ I created this project because I wanted to have more control over filtering/quer
 
 As I am currently looking for jobs globally, the great volume of potential jobs is prohibitive to manual consideration. This project includes some filtering scripts who's primary purpose is to remove jobs I am not likely to be interested in, and jobs that are not entry level.
 
-## Project status
-Scrapers complete, filters in progress.
-
 ## Installation
 You can clone or download this project, and run it after installing the scrapy python library.
 
